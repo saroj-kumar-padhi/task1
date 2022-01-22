@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class ResponsiveWiget extends StatelessWidget {
   final Widget mobile;
-  final Widget Tab;
-  final Widget DeskTop;
+  final Widget tab;
+  final Widget deskTop;
 
-  const ResponsiveWiget({Key? key, required this.mobile, required this.Tab, required this.DeskTop}) : super(key: key);
+  const ResponsiveWiget({Key? key, required this.mobile, required this.tab, required this.deskTop}) : super(key: key);
 
 
   @override
@@ -16,10 +16,10 @@ class ResponsiveWiget extends StatelessWidget {
             return mobile;
           }
          else if(Constraints.maxWidth > 768 && Constraints.maxWidth < 992){
-           return Tab;
+           return tab;
           }
          else{
-           return DeskTop;
+           return deskTop;
           }
         });
   }
