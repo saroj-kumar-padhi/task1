@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:task1/who%20we%20are.dart';
+import 'package:task1/who_we_are.dart';
 
 void main() {
   runApp(const MyApp());
@@ -51,43 +51,39 @@ class _MyHomePageState extends State<MyHomePage> {
                     Container(
                       margin: EdgeInsets.only(
                           left: MediaQuery.of(context).size.width * 0.1),
-                      child: CostumFonts('Puja Purohit'),
+                      child: PujaPurohitHeader("Puja Purohit"),
                     ),
                   ],
                 ),
                 Container(
                   margin: EdgeInsets.only(
                       left: MediaQuery.of(context).size.width * 0.1),
-                  child: Text(
-                    "COMPANY",
-                    style: GoogleFonts.poppins(
-                        fontSize: 25, fontWeight: FontWeight.w500),
-                  ),
+                  child: PujaPurohitHeader("Company"),
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                Textwidget("WHO WE ARE"),
+                NavigatorTextButtons("Who we are"),
                 SizedBox(
                   height: 5,
                 ),
-                Textwidget("Blog"),
+                NavigatorTextButtons("Blog"),
                 SizedBox(
                   height: 5,
                 ),
-                Textwidget("careers"),
+                NavigatorTextButtons("careers"),
                 SizedBox(
                   height: 5,
                 ),
-                Textwidget("Report Fraud"),
+                NavigatorTextButtons("Report Fraud"),
                 SizedBox(
                   height: 5,
                 ),
-                Textwidget("Contacts"),
+                NavigatorTextButtons("Contacts"),
                 SizedBox(
                   height: 5,
                 ),
-                Textwidget("Investor Relation"),
+                NavigatorTextButtons("Investor Relation"),
               ],
             )),
       ],
@@ -95,25 +91,14 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class CostumFonts extends StatelessWidget {
-String text;
-CostumFonts(this.text);
-
-  @override
-  Widget build(BuildContext context) {
-    return customfonts();
-  }
-}
-
-class customfonts extends StatelessWidget {
-  const customfonts({
-    Key? key,
-  }) : super(key: key);
+class PujaPurohitHeader extends StatelessWidget {
+  PujaPurohitHeader(this.text);
+  final String text;
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      "Puja Purohit",
+      text,
       style: GoogleFonts.poppins(
         fontWeight: FontWeight.w600,
         color: Colors.grey,
@@ -123,12 +108,12 @@ class customfonts extends StatelessWidget {
   }
 }
 
-class Textwidget extends StatelessWidget {
+class NavigatorTextButtons extends StatelessWidget {
   late String text;
-  Textwidget(this.text);
+  NavigatorTextButtons(this.text);
 
   List<Widget> names = [
-    wewre(),
+    WhoWeArePageNavigator(),
   ];
 
   @override
@@ -157,7 +142,6 @@ class Textwidget extends StatelessWidget {
   }
 }
 
-
 class BannerText extends StatelessWidget {
   String text;
   BannerText(this.text);
@@ -165,7 +149,7 @@ class BannerText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child:  Text(
+      child: Text(
         text,
         style: TextStyle(color: Colors.grey, fontSize: 25),
       ),
